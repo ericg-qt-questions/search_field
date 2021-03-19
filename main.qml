@@ -4,40 +4,25 @@ import QtQuick.Controls 2.12
 
 ApplicationWindow
 {
-    width: 640
-    height: 480
+    width:   640
+    height:  480
     visible: true
 
     title: qsTr( "Hello World" )
 
-
     Column
     {
-        Rectangle
+        SearchField
         {
-            color: "red"
-            radius: 15
+            id: searchField
 
-            height: field.implicitHeight + 8
-            width: 200
+            width:         200
+            fontPixelSize: 10
+            hint:          "Search"
 
-            TextField
+            onAccepted:
             {
-                id: field
-
-                anchors.fill: parent
-                anchors.margins: 4
-                anchors.verticalCenter: parent.verticalCenter
-
-                placeholderText: "search"
-
-                background: Rectangle
-                {
-                    color: "gray"
-                    anchors.fill: parent
-                    anchors.margins: -2
-                    radius: 15
-                }
+                console.log( searchField.text );
             }
         }
 
@@ -47,10 +32,15 @@ ApplicationWindow
 
             onClicked:
             {
-                console.log( field.implicitHeight)
-                console.log( field.contentHeight)
-                console.log( field.font.pixelSize )
+                console.log( searchField.input.implicitHeight)
+                console.log( searchField.input.contentHeight)
+                console.log( searchField.input.font.pixelSize )
             }
+        }
+
+        TextField
+        {
+            width: 200
         }
     }
 

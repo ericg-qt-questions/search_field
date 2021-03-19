@@ -4,5 +4,6 @@
         <file>qtquickcontrols2.conf</file>
         <file>clear.svg</file>
         <file>search.svg</file>
+        <file>SearchField.qml</file>
     </qresource>
 </RCC>
